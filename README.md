@@ -1,4 +1,4 @@
-## Linked_list
+## Linked List
 
 This is a Python script that defines a linked list data structure.
 
