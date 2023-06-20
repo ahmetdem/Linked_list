@@ -7,7 +7,7 @@ class node:
         return self.data
     
 class Linkedlist:
-    def __init__(self, nodes=None):
+    def __init__(self, nodes = None):
         self.head = None
 
         if nodes is not None:
@@ -15,7 +15,7 @@ class Linkedlist:
             current_node = self.head
 
             for elem in nodes:
-                current_node.next = node(data=elem)
+                current_node.next = node(data=elem) # type: ignore
                 current_node = current_node.next
 
 
@@ -49,6 +49,7 @@ class Linkedlist:
             self.head = node
             return
         
+        current_node = self.head
         for current_node in self:
             pass
 
@@ -130,3 +131,16 @@ class CircularLinkedList:
             nodes.append(str(node))
 
         print(" -> ".join(nodes))   
+
+
+llist = Linkedlist(["a", "b", "c", "d", "e", "f"])
+
+llist.add_first(node("z"))
+llist.add_last(node("g"))
+
+llist.add_after("c", node("cc"))
+llist.add_before("c", node("bb"))
+
+llist.remove_node("z")
+
+print(llist)
